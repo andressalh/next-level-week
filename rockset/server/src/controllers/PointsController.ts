@@ -64,6 +64,7 @@ class PointsController{
             city,
             uf,
         }
+        
         const insertedIds = await trx('points').insert(point);
         const point_id = insertedIds[0];
 
@@ -73,7 +74,10 @@ class PointsController{
                 point_id,
             };
         });
+
         await trx('point_items').insert(pointItems);
+        await trx.commit();
+        
         return response.json({          
            id: point_id,
             ...point,
