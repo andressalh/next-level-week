@@ -56,7 +56,7 @@ class PointsController{
         const trx = await knex.transaction();
     
         const point  = {
-            image: 'image-face',
+            image: 'https://images.unsplash.com/photo-1542838132-92c53300491e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=400&q=60',
             name,
             email,
             whatsapp,
@@ -77,7 +77,7 @@ class PointsController{
         });
 
         await trx('point_items').insert(pointItems);
-        await trx.commit();
+        await trx.commit(); // create inserts in the database
         
         return response.json({          
            id: point_id,
