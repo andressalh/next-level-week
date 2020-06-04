@@ -4,21 +4,23 @@ import knex from '../database/conection';
 class PointsController{
  
     async index(request: Request , response: Response){
-        const { city, uf, items } = request.query;
-
-        const parsedItems = String(items)
-        .split(',').
-        map(item => Number(item.trim()))
+        const { city, uf, Items } = request.query;        
+        
+        const parsedItems = String(Items)
+        .split(',')
+        .map(item => Number(item.trim()))
        
         const points = await knex('points')
+        .select('points.*')
         .join('point_items', 'points.id', '=', 'point_items.point_id')
         .whereIn('point_items.item_id', parsedItems)
+        
         .where('city', String(city))
         .where('uf', String(uf))
         .distinct()
-        .select('points.*')
-        console.log(points)
         
+        if (!points) return response.status(400).json({error: "Point not found!"});
+
         return response.json(points);
         
     }
@@ -28,15 +30,14 @@ class PointsController{
         const { id } = request.params;
         const point = await knex('points').where('id', id).first();
         
-        if (!point){ 
-            return response.status(400).json({ message: 'Point not found.'});
-        }
+        if (!point){ return response.status(400).json({ message: 'Point not found.'});}
 
         const items = await knex('items')
         .join('point_items', 'items.id', '=', 'point_items.item_id')
         .where('point_items.point_id', id)
         .select('items.title');
-       
+       if (!items) return response.status(400).json({error: "Item on point not found!"});
+
         return response.json({point, items});
     };
 
