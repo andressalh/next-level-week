@@ -28,16 +28,22 @@ const CreatePoint = () => {
      const [ufs, setUfs] = useState<string[]>([]);
      const [cities, setCities] = useState<string[]>([]);
 
+     const [formData, setFormData] = useState({
+         name: '',
+         email: '',
+         whatsapp: '',
+     });
+
      const [initialPostion, setInitialPostion] = useState<[number, number]>([0,0]);
      const [selectedUf, setSelectedUf] = useState('0');
      const [selectedCity, setSelectedCity] = useState('0');
-     const [selectPostion, setSelectedPosition] = useState<[number, number]>([0,0]);
-
+     const [selectPostion, setSelectedPosition] = useState<[number, number]>([0,0]); 
+     const [selectedItems, setSelectedItems] = useState<number[]>([]);
+     
      useEffect(() => {
          navigator.geolocation.getCurrentPosition(position => {
             const { latitude, longitude} = position.coords;
             setInitialPostion([latitude, longitude ]);
-            console.log(initialPostion)
          });
      }, []);
     useEffect(() => {
@@ -82,7 +88,15 @@ const CreatePoint = () => {
         
     }
 
+    function handleInputChange(event: ChangeEvent<HTMLInputElement>){
+        const { name, value }  = event.target;
 
+        setFormData({ ...formData, [name]: value});
+    }
+
+    function handleSelectItem(id: number){
+        setSelectedItems([id]);
+    }
     return (
         <div id="page-create-point">
             <header>
@@ -102,25 +116,31 @@ const CreatePoint = () => {
                      <div className="field">
                          <label htmlFor="name">Nome da entidade</label>
                          <input 
-                         type="text" 
-                         name="name" 
-                         id="name"/>
+                            type="text" 
+                            name="name" 
+                            id="name"
+                            onChange={handleInputChange}
+                         />
                      </div>
 
                      <div className="field-group">
                         <div className="field">
                             <label htmlFor="email">Email:</label>
                             <input 
-                            type="email" 
-                            name="email" 
-                            id="email"/>
+                                type="email" 
+                                name="email" 
+                                id="email"
+                                onChange={handleInputChange}
+                            />
                         </div> 
                         <div className="field">
                             <label htmlFor="name">Whatsapp</label>
                             <input 
-                            type="text" 
-                            name="whatsapp" 
-                            id="whatsapp"/>
+                                type="text" 
+                                name="whatsapp" 
+                                id="whatsapp"
+                                onChange={handleInputChange}
+                            />
                         </div> 
                      </div>
                 </fieldset>
@@ -180,7 +200,11 @@ const CreatePoint = () => {
 
                     <ul className="items-grid">
                         {items.map(item => (
-                            <li key={item.id}> 
+                            <li 
+                            className={selectedItems.includes(item.id) ? 'selected' : '' }
+                                key={item.id} 
+                                onClick={() => handleSelectItem(item.id)}
+                            > 
                                 <img src={item.image_url} alt={item.title}/>
                                 <span>{item.title}</span>
                             </li>
