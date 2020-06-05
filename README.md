@@ -8,14 +8,6 @@
 
 <a id="sobre"></a>
 
-## :## :heavy_check_mark: Resultado:
-
-- O layout está disponível no **[Figma](https://www.figma.com/file/1SxgOMojOB2zYT0Mdk28lB/)**;
-
-<h1 align="center">
-    <img alt="Web" src=".github/VideoWeb.gif" width="900px">
-</h1>: Sobre
-
 Esse projeto foi construido na semana Next Level Weel realizada pela [Rocketseat](https://rocketseat.com.br/). 
 
 <a id="documentacao"></a>
@@ -37,8 +29,6 @@ O projeto foi desenvolvido utilizando
 
 ## :heavy_check_mark: Resultado:
 
-- O site está disponível no (#)**
+- O site está disponível no **[aqui](#)**
 
-<h1 align="center">
-    <img alt="Web" src=".github/VideoWeb.gif" width="900px">
-</h1>
+
