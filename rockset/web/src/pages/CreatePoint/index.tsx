@@ -8,9 +8,13 @@ import api from '../../services/api';
 import axios from 'axios';
 import {LeafletMouseEvent} from 'leaflet';
 
+
+
 const CreatePoint = () => {
 
-
+    interface errorName{
+        errorName: string;
+    }
     interface Item{
         id: number;
         title: string;
@@ -110,6 +114,7 @@ const CreatePoint = () => {
         
     }
 
+
     async function handleSubmit(event: FormEvent){
         event.preventDefault();
 
@@ -129,10 +134,23 @@ const CreatePoint = () => {
             longitude,
             items,
         };
+
+        console.log(items)
+        if(!items.length){
+            document.querySelector('.fieldset-list')!.className = 'fieldset-list-empty';  
+            console.log("entrou aqui")
+        }
+        else {
+            console.log("aqui");
+        
             await api.post('/points', data);
-            history.push('/created-point'); 
+            history.push('/created-point');  
+        }
+           
                       
 }
+
+
 
 
     return (
@@ -145,7 +163,7 @@ const CreatePoint = () => {
                 </Link>
             </header>
             
-            <form onSubmit={handleSubmit} id="form">
+            <form onSubmit={handleSubmit} className="form">
                 <h1>Cadastro do<br/> ponto de coleta</h1>
                 <fieldset>
                     <legend>
@@ -158,9 +176,8 @@ const CreatePoint = () => {
                             name="name" 
                             id="name"
                             onChange={handleInputChange}
+                            required
                          />
-                         <small>Digite o nome da entidade</small>
-                        <span className="error"><p id="name_error">Digite o nome da entidade</p></span>
                      </div>
 
                      <div className="field-group">
@@ -171,6 +188,7 @@ const CreatePoint = () => {
                                 name="email" 
                                 id="email"                      
                                 onChange={handleInputChange}
+                                required
                             />
                         </div> 
                         <div className="field">
@@ -180,6 +198,7 @@ const CreatePoint = () => {
                                 name="whatsapp" 
                                 id="whatsapp"
                                 onChange={handleInputChange}
+                                required
                             />
                         </div> 
                      </div>
@@ -206,8 +225,9 @@ const CreatePoint = () => {
                             id="uf" 
                             value={selectedUf} 
                             onChange={handleSelectUf}
+                            required
                             >
-                                <option value="0">Selecione o estado</option>
+                                <option value="">Selecione o estado</option>
                                 {ufs.map(uf => (
                                     <option key={uf} value={uf}>{uf}</option>
                                 ))}
@@ -222,8 +242,9 @@ const CreatePoint = () => {
                                 id="city"
                                 value={selectedCity}
                                 onChange={handleSelectcity}
+                                required
                             >
-                            <option value="0" >Selecione a cidade
+                            <option value="" >Selecione a cidade
                             </option>
                                 {cities.map(city => (
                                     <option key={city} value={city}>{city}</option>
@@ -233,7 +254,7 @@ const CreatePoint = () => {
                     </div>
                 </fieldset>
 
-                <fieldset>
+                <fieldset className="fieldset-list">
                     <legend>
                         <h2>Ítems de coleta</h2>
                         <span>Selecione um ou mais itens abaixo</span>
@@ -244,17 +265,14 @@ const CreatePoint = () => {
                             <li 
                                 className={selectedItems.includes(item.id) ? 'selected' : '' }
                                 key={item.id}               
-                                onClick={() => handleSelectItem(item.id)}
-                                
+                                onClick={() => handleSelectItem(item.id)}                               
                             > 
                                 <img src={item.image_url} alt={item.title}/>
                                 <span>{item.title}</span>
                             </li>
                         ))}
-                        
-                       
-                
                     </ul>
+                    <span className="items-grid-span">Selecione pelo menos um item</span>
                 </fieldset>
                 <button type="submit">Cadastrar ponto de coleta</button>
             </form>

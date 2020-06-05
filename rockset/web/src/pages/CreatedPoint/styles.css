@@ -30,6 +30,15 @@
     margin-top: 3%;
 }
 
-.error{
-    display: none;
+
+.fieldset-list .items-grid-span {
+    visibility: hidden;
+}
+
+.fieldset-list-empty {
+    visibility: visible;
+    color: red;
+}
+ul.items-grid {
+    margin-bottom: 3%;
 }
