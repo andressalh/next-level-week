@@ -27,6 +27,6 @@ O projeto foi desenvolvido utilizando
 
 ## :heavy_check_mark: Resultado:
 
-- O site está disponível no **[aqui](#)**
+- O site está disponível **[aqui](#)**
 
 
