@@ -8,13 +8,19 @@
 
 <a id="sobre"></a>
 
-## :bookmark: Sobre
+## :## :heavy_check_mark: Resultado:
+
+- O layout está disponível no **[Figma](https://www.figma.com/file/1SxgOMojOB2zYT0Mdk28lB/)**;
+
+<h1 align="center">
+    <img alt="Web" src=".github/VideoWeb.gif" width="900px">
+</h1>: Sobre
 
 Esse projeto foi construido na semana Next Level Weel realizada pela [Rocketseat](https://rocketseat.com.br/). 
 
 <a id="documentacao"></a>
 
-## :books: Documentação
+## :file_folder: Documentação
 
 Para fixar melhor o conteúdo e conseguir usar alguns comandos e conceitos posteriormente eu fiz algumas **[anotações](documentation.md)**
 
