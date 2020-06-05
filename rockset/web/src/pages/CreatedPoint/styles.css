@@ -7,11 +7,16 @@
     justify-content: center;
     height: 100vh;
     padding: 0 30px;
+    flex-direction: column;
+    align-items: center;
 }
 
 .content-created-point {
     display: flex;
     align-items: center;
+    height: 100vh;
+    width: 100vw;
+    justify-content: center;
 }
 .content-created-point svg {
     margin: 0 auto;
@@ -30,15 +35,18 @@
     margin-top: 3%;
 }
 
-
-.fieldset-list .items-grid-span {
-    visibility: hidden;
+header a {
+    text-decoration: none;
+}
+header a:visited  {
+    color: rgb(85,26,139);
+}
+.content-created-point svg {
+    color: rgb(85,26,139);
 }
 
-.fieldset-list-empty {
-    visibility: visible;
-    color: red;
-}
-ul.items-grid {
-    margin-bottom: 3%;
+header {
+    padding: 0 30px;
+    padding-top: 20px;
+    width: 100vw;
 }
