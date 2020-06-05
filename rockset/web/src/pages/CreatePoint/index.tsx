@@ -1,7 +1,7 @@
-import React, {useEffect, useState, ChangeEvent} from 'react';
+import React, {useEffect, useState, ChangeEvent, FormEvent} from 'react';
 import './styles.css';
 import logo from '../../assets/logo.svg';
-import { Link } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 import { FiArrowLeft} from 'react-icons/fi';
 import {Map, TileLayer, Marker } from 'react-leaflet';
 import api from '../../services/api';
@@ -40,14 +40,17 @@ const CreatePoint = () => {
      const [selectPostion, setSelectedPosition] = useState<[number, number]>([0,0]); 
      const [selectedItems, setSelectedItems] = useState<number[]>([]);
      
+     const history = useHistory();
+
      useEffect(() => {
          navigator.geolocation.getCurrentPosition(position => {
             const { latitude, longitude} = position.coords;
             setInitialPostion([latitude, longitude ]);
          });
      }, []);
+
     useEffect(() => {
-        api.get('items').then(response => {
+        api.get('/items').then(response => {
             setItems(response.data);
         });
     }, []);
@@ -63,11 +66,13 @@ const CreatePoint = () => {
         if ( selectedUf === '0'){
             return;
         }
-        axios.get<IBGECityResponse[]>(`https://servicodados.ibge.gov.br/api/v1/localidades/estados/${selectedUf}/municipios`)
+        axios
+        .get<IBGECityResponse[]>(
+        `https://servicodados.ibge.gov.br/api/v1/localidades/estados/${selectedUf}/municipios`)
         .then(response => {
             const cityNames = response.data.map(city => city.nome);
             setCities(cityNames);
-        }); ;
+        }); 
     }, [selectedUf]);
 
     function handleSelectUf(event: ChangeEvent<HTMLSelectElement> ){
@@ -95,8 +100,41 @@ const CreatePoint = () => {
     }
 
     function handleSelectItem(id: number){
-        setSelectedItems([id]);
+        const alreadySelected = selectedItems.findIndex((item) => item === id);
+        if (alreadySelected >= 0){
+            const filteresItems = selectedItems.filter((item) => item !== id);
+            setSelectedItems(filteresItems);
+        } else {
+            setSelectedItems([...selectedItems, id]);
+        }
+        
     }
+
+    async function handleSubmit(event: FormEvent){
+        event.preventDefault();
+
+        const { name, email, whatsapp} = formData;
+        const uf = selectedUf;
+        const city = selectedCity;
+        const items = selectedItems;
+        const [latitude, longitude] = selectPostion;
+
+        const data = {
+            name,
+            email,
+            whatsapp,
+            uf,
+            city,
+            latitude, 
+            longitude,
+            items,
+        };
+        console.log(data);
+        await api.post('/points', data);
+        alert('Ponto de coloeta criado!');
+        history.push('/');
+    }
+
     return (
         <div id="page-create-point">
             <header>
@@ -107,7 +145,7 @@ const CreatePoint = () => {
                 </Link>
             </header>
             
-            <form>
+            <form onSubmit={handleSubmit}>
                 <h1>Cadastro do<br/> ponto de coleta</h1>
                 <fieldset>
                     <legend>
