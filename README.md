@@ -3,8 +3,6 @@
 - [Sobre](#sobre)
 - [Documentação](#documentacao)
 - [Tecnologias Utilizadas](#tecnologias-utilizadas)
-- [Como Usar](#como-usar)
-- [Como Contribuir](#como-contribuir
 
 <a id="sobre"></a>
 
