@@ -35,17 +35,17 @@
     margin-top: 3%;
 }
 
-header a {
+#page-created-point-header a {
     text-decoration: none;
 }
-header a:visited  {
+#page-created-point-header a:visited  {
     color: rgb(85,26,139);
 }
 .content-created-point svg {
     color: rgb(85,26,139);
 }
 
-header {
+#page-created-point-header {
     padding: 0 30px;
     padding-top: 20px;
     width: 100vw;

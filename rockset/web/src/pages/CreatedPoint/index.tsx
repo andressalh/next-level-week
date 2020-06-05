@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom';
 const CreatedPoint = () => {
     return (
         <div id="page-created-point">
-            <header>
+            <header id="page-created-point-header">
                 <Link to="/">
                     <span>
                         <FiArrowLeft/>

@@ -135,14 +135,10 @@ const CreatePoint = () => {
             items,
         };
 
-        console.log(items)
         if(!items.length){
             document.querySelector('.fieldset-list')!.className = 'fieldset-list-empty';  
-            console.log("entrou aqui")
         }
         else {
-            console.log("aqui");
-        
             await api.post('/points', data);
             history.push('/created-point');  
         }

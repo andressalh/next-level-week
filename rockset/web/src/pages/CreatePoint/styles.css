@@ -202,6 +202,16 @@
     border: 2px solid #34CB79;
   }
 
+  .items-grid-span{
+    color: red;
+    visibility: hidden;
+  }
+  .items-grid {
+    margin-bottom: 20px;
+  }
+  .fieldset-list-empty .items-grid-span{
+    visibility: visible;
+  }
   
 @media all and (max-width: 500px) { 
 
