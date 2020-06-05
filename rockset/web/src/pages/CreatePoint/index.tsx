@@ -81,8 +81,8 @@ const CreatePoint = () => {
     }
 
     function handleSelectcity(event: ChangeEvent<HTMLSelectElement> ){
-        const city = event.target.value;
-        setSelectedCity(city);
+            const city = event.target.value;
+            setSelectedCity(city);
     }
 
     function handleMapClick(event: LeafletMouseEvent){
@@ -129,11 +129,11 @@ const CreatePoint = () => {
             longitude,
             items,
         };
-        console.log(data);
-        await api.post('/points', data);
-        alert('Ponto de coloeta criado!');
-        history.push('/');
-    }
+            await api.post('/points', data);
+            history.push('/created-point'); 
+                      
+}
+
 
     return (
         <div id="page-create-point">
@@ -145,7 +145,7 @@ const CreatePoint = () => {
                 </Link>
             </header>
             
-            <form onSubmit={handleSubmit}>
+            <form onSubmit={handleSubmit} id="form">
                 <h1>Cadastro do<br/> ponto de coleta</h1>
                 <fieldset>
                     <legend>
@@ -159,6 +159,8 @@ const CreatePoint = () => {
                             id="name"
                             onChange={handleInputChange}
                          />
+                         <small>Digite o nome da entidade</small>
+                        <span className="error"><p id="name_error">Digite o nome da entidade</p></span>
                      </div>
 
                      <div className="field-group">
@@ -167,7 +169,7 @@ const CreatePoint = () => {
                             <input 
                                 type="email" 
                                 name="email" 
-                                id="email"
+                                id="email"                      
                                 onChange={handleInputChange}
                             />
                         </div> 
@@ -216,10 +218,11 @@ const CreatePoint = () => {
                         <div className="field">
                             <label htmlFor="city">Cidade</label>
                             <select 
-                            name="city" 
-                            id="city"
-                            value={selectedCity}
-                            onChange={handleSelectcity}>
+                                name="city" 
+                                id="city"
+                                value={selectedCity}
+                                onChange={handleSelectcity}
+                            >
                             <option value="0" >Selecione a cidade
                             </option>
                                 {cities.map(city => (
@@ -239,9 +242,10 @@ const CreatePoint = () => {
                     <ul className="items-grid">
                         {items.map(item => (
                             <li 
-                            className={selectedItems.includes(item.id) ? 'selected' : '' }
-                                key={item.id} 
+                                className={selectedItems.includes(item.id) ? 'selected' : '' }
+                                key={item.id}               
                                 onClick={() => handleSelectItem(item.id)}
+                                
                             > 
                                 <img src={item.image_url} alt={item.title}/>
                                 <span>{item.title}</span>

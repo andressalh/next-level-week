@@ -1,0 +1,35 @@
+
+
+#page-created-point {
+    background: #0E0A14;
+    opacity: 0.95;
+    display: flex;
+    justify-content: center;
+    height: 100vh;
+    padding: 0 30px;
+}
+
+.content-created-point {
+    display: flex;
+    align-items: center;
+}
+.content-created-point svg {
+    margin: 0 auto;
+    display: flex;
+    height: 3em;
+    width: 3em;
+}
+
+#page-created-point h1 {
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 36px;
+    line-height: 42px;
+    color: #F0F0F5;
+    margin-top: 3%;
+}
+
+.error{
+    display: none;
+}

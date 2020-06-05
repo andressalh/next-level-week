@@ -65,22 +65,28 @@ class PointsController{
             city,
             uf,
         }
-        
+     
         const insertedIds = await trx('points').insert(point);
         const point_id = insertedIds[0];
-        console.log("items: " +items);
 
         const pointItems = items.map((item_id: number) => {
-            console.log("pointItems: " +pointItems)
             return {
                 item_id,
                 point_id,
             };
         });
 
-        await trx('point_items').insert(pointItems);
-        await trx.commit(); // create inserts in the database
-        
+
+        try {
+            await trx('point_items').insert(pointItems);
+            await trx.commit(); // create inserts in the database
+        }catch (error) {
+            await trx.rollback();
+             return response.status(400).json({ 
+                 message: 'Falha na inserção na tabela point_items, verifique se os items informados são válidos' })
+        }
+
+    
         return response.json({          
            id: point_id,
             ...point,
