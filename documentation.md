@@ -26,7 +26,9 @@ Instalação do pacote <strong>sqlite3</strong> na aplicação.
 
 - Instalação: 
 
-```npm install sqlite3```
+```
+npm install sqlite3
+```
   
 <h3>knex</h3>
   
@@ -34,7 +36,9 @@ O <strong>knex</strong> permite escrever comandos sql com sintaxe do <strong>Jav
 
 - Instalação:
 
-```npm install knex```
+```
+npm install knex
+```
 
 - Configurar o script para rodar o comando de uma forma mais fácil no ```package.json```.
 
@@ -42,7 +46,10 @@ O <strong>knex</strong> permite escrever comandos sql com sintaxe do <strong>Jav
 "knex:migrate": "npx knex --knexfile knexfile.ts migrate:latest"
 ```
 
-- O <strong>knex</strong> fará a criação das tabelas no banco de dados, para executar utilize o comando ``` npm run knex:migrate ```
+- O <strong>knex</strong> fará a criação das tabelas no banco de dados, para executar utilize o comando 
+
+```npm run knex:migrate
+```
 
 - Configuração do seeds para popular as tabelas do banco de dados no ```package.json```, acrescente: 
 
@@ -51,7 +58,11 @@ O <strong>knex</strong> permite escrever comandos sql com sintaxe do <strong>Jav
 "knex:seed": " npx knex —knexfile knexfile.ts seed:run" 
 ```
 
-- Para executar as seeds execute o comando ``` npm run knex:seed ```
+- Para executar as seeds execute o comando 
+
+```
+npm run knex:seed
+```
 
 <a id="back-end"></a>
 <h1>Back end</h1>
@@ -66,7 +77,9 @@ O <strong>knex</strong> permite escrever comandos sql com sintaxe do <strong>Jav
 
 <h3>Comandos iniciais</h3>
 
-- ```npm init -y```
+```
+npm init -y
+```
 
 <h3>Typescript</h3>
 
@@ -74,11 +87,15 @@ Para utilizar o <strong> Typescript </strong> é necessário instalar a dependê
 
 - Instalação:
 
-```npm install typescript -D```
+```
+npm install typescript -D
+```
 
 - Após a instalação utilize o comando para criar o file.
 
-```npx tsc --init```
+```
+npx tsc --init
+```
 
 <h3>Express</h3>
 
@@ -86,8 +103,9 @@ O Express é responsável pelo roteamento do servidor, é necessário instalaç�
  
 - Instalação do express
 
-```npm install express
-```npm install @types/express -D
+```
+npm install express
+npm install @types/express -D
 ```
 
 <h3>ts-node</h3>
@@ -96,7 +114,9 @@ O <strong>ts-node</strong> permite que o node compile arquivos <strong>typescrip
  
 - Instalação:
 
-```npx ts-node src/server.ts```
+```
+npx ts-node src/server.ts
+```
 
 <h3>ts-node-dev</h3>
 
@@ -104,7 +124,9 @@ O <strong>ts-node-dev</strong> faz o monitoramento da pasta configurada, com iss
  
 - Instalação:
 
-```npm install ts-node-dev -D ```
+```
+npm install ts-node-dev -D
+```
 
 - Após a instalação anterior da dependência, configurar dentro do ```package.json```, adicionar essas linhas de comando. O ```--ignore-watch node_modules``` ignora o node_modules em cada verificação, pois o node_modules não constuma ser alterado. Com isso, as altualizações são executadas mais rapidamente.
 
@@ -116,7 +138,9 @@ O <strong>ts-node-dev</strong> faz o monitoramento da pasta configurada, com iss
 
 Após essa configuração, podemos executar o comando, com isso sempre que tiver alguma alteração no código, o <strong>ts-node-dev</strong> irá fazer a atualização automática.
 
-```npm run dev```
+```
+npm run dev
+```
 
 <h3>cors</h3>
 
@@ -141,7 +165,9 @@ npm install @types/cors
 
 Para começar a parte front end, executar o react app utilizando o template typescript.
 
- ```npx create-react-app nomedapasta --template=typescript```
+ ```
+ npx create-react-app nomedapasta --template=typescript
+ ```
 
 <h3>Axios</h3>
 
@@ -149,7 +175,9 @@ Axios é utilizado para fazer requisições HTTP.
 
 - Instalação:
 
-```npm install axios```
+```
+npm install axios
+```
 
 <h3>React Router DOM</h3>
 
@@ -193,4 +221,5 @@ npm install @types/react-leaflet -D
 
 <a id="mobile"></a>
 <h1>Mobile</h1>
+
 - Em construção
