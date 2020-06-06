@@ -70,9 +70,10 @@ O <strong>knex</strong> permite escrever comandos sql com sintaxe do <strong>Jav
 
 <h3>Typescript</h3>
 
-Para utilizar o <strong> Typescript </strong> é necessário instalar a dependências.
+Para utilizar o <strong> Typescript </strong> é necessário instalar a dependência.
 
 - Instalação:
+
 ```npm install typescript -D```
 
 - Após a instalação utilize o comando para criar o file.
@@ -84,6 +85,7 @@ Para utilizar o <strong> Typescript </strong> é necessário instalar a dependê
 O Express é responsável pelo roteamento do servidor, é necessário instalação do pacote padrão e o @types para ser utilizado junto com o Typescrips.
  
 - Instalação do express
+
 ```npm install express
 ```npm install @types/express -D
 ```
@@ -93,20 +95,23 @@ O Express é responsável pelo roteamento do servidor, é necessário instalaç�
 O <strong>ts-node</strong> permite que o node compile arquivos <strong>typescript</strong> pois como padrão o Node executa somente o <strong>JavaScript</strong>.
  
 - Instalação:
+
 ```npx ts-node src/server.ts```
 
 <h3>ts-node-dev</h3>
 
-O <strong>ts-node-dev</strong> faz o monitoramento da pasta configurada, com isso não precisamos executar sempre um comanndo  <strong>npx ts-node-dev src/server.ts</strong> quando tiver alguma alteração no código.
+O <strong>ts-node-dev</strong> faz o monitoramento da pasta configurada, com isso não precisamos executar sempre o comando  <strong>npx ts-node-dev src/server.ts</strong> quando tiver alguma alteração no código.
  
 - Instalação:
+
 ```npm install ts-node-dev -D ```
 
-Após a instalação anterior da dependência, configurar dentro do ```package.json```, adicionar essas linhas de comando. O ```--ignore-watch node_modules``` ignora o node_modules em cada verificação, pois o node_modules não constuma ser alterado.
+- Após a instalação anterior da dependência, configurar dentro do ```package.json```, adicionar essas linhas de comando. O ```--ignore-watch node_modules``` ignora o node_modules em cada verificação, pois o node_modules não constuma ser alterado. Com isso, as altualizações são executadas mais rapidamente.
 
 ```
 "scripts": {
-"dev": "ts-node-dev --transpileOnly --ignore-watch node_modules src/server.ts"}
+"dev": "ts-node-dev --transpileOnly --ignore-watch node_modules src/server.ts"
+}
 ```
 
 Após essa configuração, podemos executar o comando, com isso sempre que tiver alguma alteração no código, o <strong>ts-node-dev</strong> irá fazer a atualização automática.
@@ -143,6 +148,7 @@ Para começar a parte front end, executar o react app utilizando o template type
 Axios é utilizado para fazer requisições HTTP.
 
 - Instalação:
+
 ```npm install axios```
 
 <h3>React Router DOM</h3>
@@ -152,11 +158,11 @@ O React Router DOM será responsável pelo roteamento da aplicação web.
 - Instalação:
 ```
 npm install react-router-dom
- npm install @types/react-router-dom -D
+npm install @types/react-router-dom -D
 ```
 <h3>react-icons</h3>
 
-O react-icons permite usar icons na aplicação.
+O react-icons permite usar icons nas aplicações.
 
 - Instalação:
 
@@ -168,14 +174,14 @@ O react-icons permite usar icons na aplicação.
  // Importação
   import { FiCheckCircle } from 'react-icons/fi'
 
-  // Component
+// Component
   <FiCheckCircle" />
 ```
 
 
 <h3>Leaflet</h3>
 
-Para a utilização do mapa na nossa aplicação, foi utilizado a api open source para a utilização de mapa.
+Para a utilização do mapa na nossa aplicação, foi utilizado a api open source <strong>Leaflet</strong>.
 
 - Instalação:
 
@@ -186,5 +192,5 @@ npm install @types/react-leaflet -D
 
 
 <a id="mobile"></a>
-
+<h1>Mobile</h1>
 - Em construção
