@@ -48,7 +48,8 @@ npm install knex
 
 - O <strong>knex</strong> fará a criação das tabelas no banco de dados, para executar utilize o comando 
 
-```npm run knex:migrate
+```
+npm run knex:migrate
 ```
 
 - Configuração do seeds para popular as tabelas do banco de dados no ```package.json```, acrescente: 
