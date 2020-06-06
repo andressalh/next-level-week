@@ -2,7 +2,7 @@
   <img width="200" height="80" src="https://github.com/andressalh/next-level-week/blob/master/rockset/web/src/assets/logo.svg">
 </p>
 
-# Index - Under constructuin!
+# Index - Under construction!
 
 - [Sobre](#sobre)
 - [Documentação](#documentacao)
