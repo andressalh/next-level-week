@@ -1,3 +1,7 @@
+<p align="center">
+  <img width="200" height="80" src="https://github.com/andressalh/next-level-week/blob/master/rockset/web/src/assets/logo.svg">
+</p>
+
 # Index
 
 - [Sobre](#sobre)
@@ -29,4 +33,6 @@ O projeto foi desenvolvido utilizando
 
 - O site está disponível **[aqui](#)**
 
-
+<img  src="https://github.com/andressalh/next-level-week/blob/master/rockset/web/src/assets/home.png">
+<img  src="https://github.com/andressalh/next-level-week/blob/master/rockset/web/src/assets/cadastro.png">
+<img  src="https://github.com/andressalh/next-level-week/blob/master/rockset/web/src/assets/cadastro-realizado.png">
