@@ -22,17 +22,21 @@ Foi utilizado o <strong>SQLite3</strong> como banco de dados pois não é necess
 
 <h3>sqlite3</h3>
   
-- Instalação do pacote <strong>sqlite3</strong> na aplicação.
- 
+Instalação do pacote <strong>sqlite3</strong> na aplicação.
+
+- Instalação: 
+
 ```npm install sqlite3```
   
 <h3>knex</h3>
   
-- O <strong>knex</strong> permite escrever comandos sql com sintaxe do <strong>JavaScript</strong>.
+O <strong>knex</strong> permite escrever comandos sql com sintaxe do <strong>JavaScript</strong>.
+
+- Instalação:
 
 ```npm install knex```
 
-Configurar o script para rodar o comando de uma forma mais fácil.
+- Configurar o script para rodar o comando de uma forma mais fácil.
 
 ```
 "knex:migrate": "npx knex --knexfile knexfile.ts migrate:latest"
@@ -48,7 +52,6 @@ Configurar o script para rodar o comando de uma forma mais fácil.
 ```
 
 - Para executar as seeds execute o comando ``` npm run knex:seed ```
-
 
 <a id="back-end"></a>
 <h1>Back end</h1>
@@ -67,8 +70,9 @@ Configurar o script para rodar o comando de uma forma mais fácil.
 
 <h3>Typescript</h3>
 
-- Para utilizar o <strong> Typescript </strong> é necessário instalar a dependências.
+Para utilizar o <strong> Typescript </strong> é necessário instalar a dependências.
 
+- Instalação:
 ```npm install typescript -D```
 
 - Após a instalação utilize o comando para criar o file.
@@ -76,6 +80,7 @@ Configurar o script para rodar o comando de uma forma mais fácil.
 ```npx tsc --init```
 
 <h3>Express</h3>
+
 O Express é responsável pelo roteamento do servidor, é necessário instalação do pacote padrão e o @types para ser utilizado junto com o Typescrips.
  
 - Instalação do express
@@ -85,9 +90,9 @@ O Express é responsável pelo roteamento do servidor, é necessário instalaç�
 
 <h3>ts-node</h3>
 
-O <strong>ts-node</strong> permite que o node compile arquivos <strong>typescript</strong> pois como padrão o Node executa somente o <strong>JavaScript</strong>. Para instalar, execute o comando: 
+O <strong>ts-node</strong> permite que o node compile arquivos <strong>typescript</strong> pois como padrão o Node executa somente o <strong>JavaScript</strong>.
  
- 
+- Instalação:
 ```npx ts-node src/server.ts```
 
 <h3>ts-node-dev</h3>
@@ -129,14 +134,15 @@ npm install @types/cors
 
 <h3>Criar o template React </h3>
 
-Para começar a parte front end, criar o react app utilizando o template tyescrip.
+Para começar a parte front end, executar o react app utilizando o template typescript.
 
  ```npx create-react-app nomedapasta --template=typescript```
 
 <h3>Axios</h3>
 
-Axios é utilizado para fazer requisições HHTP
+Axios é utilizado para fazer requisições HTTP.
 
+- Instalação:
 ```npm install axios```
 
 <h3>React Router DOM</h3>
@@ -144,8 +150,9 @@ Axios é utilizado para fazer requisições HHTP
 O React Router DOM será responsável pelo roteamento da aplicação web. 
 
 - Instalação:
-```npm install react-router-dom
-  npm install @types/react-router-dom -D
+```
+npm install react-router-dom
+ npm install @types/react-router-dom -D
 ```
 <h3>react-icons</h3>
 
@@ -157,7 +164,8 @@ O react-icons permite usar icons na aplicação.
  
 - Para utiliza-los
 
- ```// Importação
+ ```
+ // Importação
   import { FiCheckCircle } from 'react-icons/fi'
 
   // Component
@@ -169,7 +177,7 @@ O react-icons permite usar icons na aplicação.
 
 Para a utilização do mapa na nossa aplicação, foi utilizado a api open source para a utilização de mapa.
 
-Instalação:
+- Instalação:
 
 ```npm install leaflet react-leaflet
 npm install @types/react-leaflet -D
