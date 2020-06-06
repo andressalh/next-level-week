@@ -36,7 +36,7 @@ O <strong>knex</strong> permite escrever comandos sql com sintaxe do <strong>Jav
 
 ```npm install knex```
 
-- Configurar o script para rodar o comando de uma forma mais fácil.
+- Configurar o script para rodar o comando de uma forma mais fácil no ```package.json```.
 
 ```
 "knex:migrate": "npx knex --knexfile knexfile.ts migrate:latest"
