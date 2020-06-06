@@ -1,1 +1,176 @@
 
+<p align="center">
+  <img width="200" height="80" src="https://github.com/andressalh/next-level-week/blob/master/rockset/web/src/assets/logo.svg">
+</p>
+
+# Index
+
+- [Database](#database)
+- [Back-end](#back-end)
+- [Front-end](#front-end)
+- [Front-end](#mobile)
+
+<a id="database"></a>
+<h1>Database</h1>
+
+Foi utilizado o <strong>SQLite3</strong> como banco de dados pois com ela não é preciso nenhuma configuração fora da IDE.
+
+<h2>Dependências: </h2>
+
+- sqlite3
+- knex
+
+<h3>sqlite3</h3>
+  
+- Instalação do pacote <strong>sqlite3</strong> na aplicação.
+ 
+```npm install sqlite3```
+  
+
+<h3>knex</h3>
+  
+- O <strong>knex</strong> permite escrever comandos sql com sintaxe do <strong>JavaScript</strong>.
+
+```npm install knex```
+
+Configurei o script para rodar o comando de uma forma mais fácil
+
+```
+"knex:migrate": "npx knex --knexfile knexfile.ts migrate:latest"
+```
+
+- O knex fará a criação das tabelas no banco de dados, para executar: ``` npm run knex:migrate ```
+
+Configurar o seeds para popular as tabelas do banco de dados no ```package.json```, acrescente: 
+
+```
+"knex:migrate": "npx knex --knexfile knexfile.ts migrate:latest"
+"knex:seed": " npx knex —knexfile knexfile.ts seed:run" 
+```
+
+- Para executar as seeds execute o comando: ``` npm run knex:seed ```
+
+
+<a id="back-end"></a>
+<h1>Back end</h1>
+
+<h2>Dependências: </h2>
+
+- typescript
+- express | @types/express
+- ts-node
+- ts-node-dev
+- cors | @types/cors
+
+<h3>Comandos iniciais</h3>
+
+- ```npm init -y```
+
+<h3>Typescript</h3>
+
+- Para utilizar o <strong> Typescript </strong> é necessário instalar a dependências.
+
+- ```npm install typescript -D```
+
+- Após a instalação utilize o comando para criar o file.
+
+- ```npx tsc --init```
+
+<h3>Express</h3>
+ - O Express é resposável pelo roteamento do servidor, é necessário instalação do pacote padrão e o @types para ser utilizado junto com o Typescrips.
+ 
+- <h5>Instalação do express </h5>
+```npm install express```
+
+- <h5>Instalação do express com tipagem para o typescrip </h5>
+```npm install @types/express -D```
+
+<h3>ts-node</h3>
+
+ - O <strong>ts-node</strong> permite que o node compile arquivos <strong>typescript</strong> pois como padrão o Node executa somente o <strong>JavaScrip</strong>. Para instalar, execute o comando: 
+ 
+```npx ts-node src/server.ts```
+
+<h3>ts-node-dev</h3>
+
+ - O <strong>ts-node-dev</strong> faz o monitoramento da pasta configurada, com isso não precisamos executar sempre um comanndo  <strong>npx ts-node-dev src/server.ts</strong> quando fizer um alteração no código.
+ 
+```npm install ts-node-dev -D ```
+
+- Após a instação anterior da dependência, configurar dentro do package.json, adicionar essas linhas de comando. o --ignore-watch node_modules ignora o node_modules em cada verificação, o node_modules não constuma ser alterado.
+
+```"scripts": {
+"dev": "ts-node-dev --transpileOnly --ignore-watch node_modules src/server.ts"}
+```
+
+- Após essa configuração, podemos executar o comando, com isso sempre que tiver alguma alteração no código, o <strong>ts-node-dev</strong> irá fazer a atualização automática.
+
+```npm run dev```
+
+<h3>cors</h3>
+
+- O Cors permite que outras urls acessem nossa API, para utilizado é necessário instalar o pacote padrão e o @types.  
+
+```npm install cors
+npm install @types/cors
+```
+
+<a id="front-end"></a>
+
+<h2>Dependências: </h2>
+
+- react-icons
+- react-router-dom | @types/react-router-dom
+- leaflet | react-leaflet | @types/leaflet
+- axios
+
+<h3>Criar o template React </h3>
+
+Para começar a parte front end, criar o react app utilizando o template tyescrip.
+
+ ```npx create-react-app nomedapasta --template=typescript```
+
+<h3>react-icons</h3>
+
+O react-icons permite usar icons na aplicação.
+
+- Instalação:
+
+ ```npm install react-icons```
+ 
+- Para utiliza-los
+
+ ```// Importação
+  import { FiCheckCircle } from 'react-icons/fi'
+
+  // Component
+  <FiCheckCircle" />
+```
+<h3>React Router DOM</h3>
+
+O React Router DOM será responsável pelo roteamento da aplicação web. 
+
+- Instalação:
+```npm install react-router-dom
+  npm install @types/react-router-dom -D
+```
+
+<h3>Leaflet</h3>
+
+Para a utilização do mapa na nossa aplicação, foi utilizado a api open source para a utilização de mapa.
+
+Instalação:
+
+```npm install leaflet react-leaflet
+npm install @types/react-leaflet -D
+```
+
+<h3>Axios</h3>
+
+Axios é utilizado para fazer requisições HHTP
+
+```npm install axios```
+
+<a id="mobile"></a>
+
+- Em construção
