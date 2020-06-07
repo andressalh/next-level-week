@@ -175,7 +175,6 @@ const CreatePoint = () => {
                             name="name" 
                             id="name"
                             onChange={handleInputChange}
-                            required
                          />
                      </div>
 
@@ -187,7 +186,6 @@ const CreatePoint = () => {
                                 name="email" 
                                 id="email"                      
                                 onChange={handleInputChange}
-                                required
                             />
                         </div> 
                         <div className="field">
@@ -197,7 +195,6 @@ const CreatePoint = () => {
                                 name="whatsapp" 
                                 id="whatsapp"
                                 onChange={handleInputChange}
-                                required
                             />
                         </div> 
                      </div>
@@ -224,7 +221,6 @@ const CreatePoint = () => {
                             id="uf" 
                             value={selectedUf} 
                             onChange={handleSelectUf}
-                            required
                             >
                                 <option value="">Selecione o estado</option>
                                 {ufs.map(uf => (
@@ -241,7 +237,6 @@ const CreatePoint = () => {
                                 id="city"
                                 value={selectedCity}
                                 onChange={handleSelectcity}
-                                required
                             >
                             <option value="" >Selecione a cidade
                             </option>
